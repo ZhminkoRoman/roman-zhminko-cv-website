@@ -8,7 +8,7 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({ children }) => {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main className="flex px-10 py-5">{children}</main>
     </>
   );
 };

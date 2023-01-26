@@ -12,6 +12,12 @@ module.exports = {
       lg: '1200px',
       xl: '1536px',
     },
+    extend: {
+      colors: {
+        'theme-white': '#ffffff',
+        'theme-gray': '#333333',
+      },
+    },
   },
   plugins: [],
 };
