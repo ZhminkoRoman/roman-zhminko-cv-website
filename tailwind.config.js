@@ -17,12 +17,6 @@ module.exports = {
         'theme-white': '#ffffff',
         'theme-gray': '#333333',
       },
-      boxShadow: {
-        'shadow-cursor': '0 0 15px #00000033',
-      },
-      translate: {
-        'translate-cursor': '-50%',
-      },
     },
   },
   plugins: [],
