@@ -7,3 +7,17 @@
     @apply cursor-none;
   }
 }
+
+@layer components {
+  .btn-navigation {
+    @apply relative text-theme-gray ml-10 my-5 font-mono font-bold tracking-[1px] hover:text-black;
+  }
+
+  .btn-navigation::after {
+    @apply content-[''] absolute bg-indigo-500 h-[3px] w-[0%] left-0 -bottom-2 rounded-xl duration-300;
+  }
+
+  .btn-navigation:hover::after {
+    @apply w-[100%];
+  }
+}

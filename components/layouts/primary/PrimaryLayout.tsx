@@ -1,4 +1,5 @@
 import Cursor from '@/components/cursor/Cursor';
+import NavBar from '@/components/navigation/navbar/NavBar';
 
 export interface IPrimaryLayout {
   children: React.ReactNode;
@@ -6,12 +7,15 @@ export interface IPrimaryLayout {
 
 const PrimaryLayout: React.FC<IPrimaryLayout> = ({ children }) => {
   return (
-    <div className="flex w-full h-screen">
-      <main className="flex px-10 py-5 w-full h-screen">
-        <Cursor />
-        {children}
-      </main>
-    </div>
+    <>
+      <Cursor />
+      <div className="flex flex-row min-w-screen items-center min-h-screen">
+        <NavBar />
+        <main className="flex w-full items-center justify-center">
+          {children}
+        </main>
+      </div>
+    </>
   );
 };
 
