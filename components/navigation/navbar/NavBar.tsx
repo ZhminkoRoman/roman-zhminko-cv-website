@@ -8,7 +8,7 @@ const NavBar: React.FC<INavBar> = ({ ...NavBarProps }) => {
       {...NavBarProps}
       className="flex h-screen items-center justify-center "
     >
-      <div className="flex px-40 flex-col border-r-2 ">
+      <div className="flex px-40 flex-col border-r-2 border-theme-gray">
         <Link href="/" className="btn-navigation">
           Home page
           <span className="btn-underline"></span>
