@@ -9,11 +9,9 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({ children }) => {
   return (
     <>
       <Cursor />
-      <div className="flex flex-row min-w-screen items-center min-h-screen">
+      <div className="flex flex-col flex-wrap min-w-screen min-h-screen">
         <NavBar />
-        <main className="flex w-full items-center justify-center">
-          {children}
-        </main>
+        <main className="flex w-full flex-wrap p-2">{children}</main>
       </div>
     </>
   );

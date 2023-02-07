@@ -1,20 +1,60 @@
 import PrimaryLayout from '@/components/layouts/primary/PrimaryLayout';
-import TechBlock from '@/components/technologies/techblock/TechBlock';
+import TechSection from '@/components/technologies/techsection/TechSection';
 import { ReactElement } from 'react';
 import { NextPageWithLayout } from './_app';
 
-const Technologies: NextPageWithLayout = () => {
-  const stack = ['TypeScript', 'React', 'React Native'];
+interface ITechStack {
+  [key: string]: string[] | ITechStack;
+}
 
-  const basicStack = ['HTML', 'CSS', 'JavaScript'];
+const Technologies: NextPageWithLayout = () => {
+  const stack: ITechStack = {
+    HTML: ['HTML'],
+    CSS: ['CSS'],
+    'JavaScript Basics': {
+      'Version Control Systems': {
+        Git: ['Git'],
+        'Repo hosting services': ['GitHub', 'GitLab'],
+      },
+      'Authentication Strategies': ['JWT', '0Auth'],
+      React: {
+        Styling: {
+          'CSS Preprocessors': ['Sass/SCSS', 'PostCSS', 'Less'],
+          'CSS Frameworks': ['Material UI', 'Tailwind', 'ANT Design'],
+          'CSS Architecture': ['BEM', 'CSS Modules'],
+        },
+        'Build Tools': {
+          'Package Managers': ['npm', 'yarn'],
+          'Linters and Formatters': ['Prettier', 'ESLint'],
+          'Module Bundlers': ['Vite'],
+        },
+        'State Management': {
+          'Component State': ['Component State / Context'],
+          'Redux / Toolkit': {
+            'Data Persistance': ['Redux Persist'],
+            'Async Actions': ['Redux Saga', 'Redux Thunk'],
+          },
+          MobX: ['MobX'],
+        },
+        'Type Checkers': ['PropTypes'],
+        'Form Helpers': ['Formik', 'React-Hook-Form'],
+        'API Calls': {
+          REST: ['Axios'],
+        },
+        Routing: ['React-Router', 'React Navigation'],
+        Testing: ['Jest', 'react-testing-library'],
+        Other: ['Storybook', 'Firebase', 'Practical React libraries'],
+        Mobile: ['React Native'],
+      },
+    },
+  };
   return (
     <>
       <main>
-        <p className="text-center mb-5">Basic stack</p>
-        <div className="flex flex-col">
-          {basicStack.map((s) => (
-            <TechBlock techTitle={s} key={s} />
-          ))}
+        <div className="flex flex-wrap">
+          {Object.entries(stack).map(([basicKey, basicValue], idx) => {
+            return <TechSection stack={basicValue} key={idx} />;
+          })}
         </div>
       </main>
     </>
