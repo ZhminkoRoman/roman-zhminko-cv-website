@@ -52,7 +52,7 @@ const Technologies: NextPageWithLayout = () => {
     <>
       <main>
         <div className="flex flex-wrap">
-          {Object.entries(stack).map(([basicKey, basicValue], idx) => {
+          {Object.entries(stack).map(([_, basicValue], idx) => {
             return <TechSection stack={basicValue} key={idx} />;
           })}
         </div>

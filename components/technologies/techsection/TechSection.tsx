@@ -8,7 +8,7 @@ export interface ITechSection extends React.ComponentPropsWithoutRef<'div'> {
   stack: ITechStack | string[];
 }
 
-const TechSection: React.FC<ITechSection> = ({ stack, className }) => {
+const TechSection: React.FC<ITechSection> = ({ stack }) => {
   if (Array.isArray(stack)) {
     return (
       <>
