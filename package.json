@@ -16,7 +16,12 @@
     "lint": "next lint",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "cypress": "cypress open",
+    "e2e": "start-server-and-test dev http://localhost:3000 \"cypress open --e2e\"",
+    "e2e:headless": "start-server-and-test dev http://localhost:3000 \"cypress run --e2e\"",
+    "component": "cypress open --component",
+    "component:headless": "cypress run --component"
   },
   "resolutions": {
     "webpack": "^5"
@@ -48,6 +53,7 @@
     "autoprefixer": "^10.4.13",
     "babel-loader": "^8.3.0",
     "cross-env": "^7.0.3",
+    "cypress": "^12.5.1",
     "eslint-plugin-storybook": "^0.6.10",
     "husky": "^8.0.3",
     "postcss": "^8.4.21",
