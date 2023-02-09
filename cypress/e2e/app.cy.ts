@@ -15,3 +15,5 @@ describe('Navigation', () => {
     cy.url().should('include', '/about');
   });
 });
+
+export {};
