@@ -17,7 +17,7 @@ type AppPropsWithLayout = AppProps & {
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);
   return getLayout(
-    <main className={inter.className}>
+    <main className={`${inter.className} w-full h-full`}>
       <Component {...pageProps} />
     </main>
   );

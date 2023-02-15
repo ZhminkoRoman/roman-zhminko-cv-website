@@ -7,10 +7,10 @@ const NavBar: React.FC<INavBar> = ({ ...NavBarProps }) => {
     <div {...NavBarProps} className="w-screen">
       <div className="flex border-b-2 border-theme-gray">
         <Link href="/" className="btn-navigation">
-          Home page
+          Splash page
           <span className="btn-underline"></span>
         </Link>
-        <Link href="/about" className="btn-navigation">
+        <Link href="/home" className="btn-navigation">
           About me
           <span className="btn-underline"></span>
         </Link>

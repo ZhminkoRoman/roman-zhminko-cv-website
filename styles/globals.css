@@ -4,7 +4,7 @@
 
 @layer base {
   * {
-    @apply cursor-none bg-[#f9f4f4] text-theme-gray font-mono font-bold;
+    @apply bg-theme-black text-theme-white font-mono font-bold;
   }
 }
 

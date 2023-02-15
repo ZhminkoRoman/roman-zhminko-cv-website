@@ -1,9 +1,10 @@
+import StartNavigationLink from '@/components/navigation/startNavigationLink/StartNavigationLink';
 import Head from 'next/head';
 import { ReactElement } from 'react';
 import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
 import { NextPageWithLayout } from './_app';
 
-const Home: NextPageWithLayout = () => {
+const Splash: NextPageWithLayout = () => {
   return (
     <>
       <Head>
@@ -11,15 +12,15 @@ const Home: NextPageWithLayout = () => {
         <meta name="description" content="CV Website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <main>
-        <p>Main page</p>
+      <main className="border-2 flex h-full justify-center items-center">
+        <StartNavigationLink />
       </main>
     </>
   );
 };
 
-Home.getLayout = function getLayout(page: ReactElement) {
+Splash.getLayout = function getLayout(page: ReactElement) {
   return <PrimaryLayout>{page}</PrimaryLayout>;
 };
 
-export default Home;
+export default Splash;

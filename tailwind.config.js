@@ -16,6 +16,7 @@ module.exports = {
       colors: {
         'theme-white': '#f9f4f4',
         'theme-gray': '#333333',
+        'theme-black': '#1D2228',
       },
       keyframes: {
         'first-drop': {
