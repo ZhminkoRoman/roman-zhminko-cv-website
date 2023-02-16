@@ -1,4 +1,5 @@
 import PrimaryLayout from '@/components/layouts/primary/PrimaryLayout';
+import SplashLayout from '@/components/layouts/splash/SplashLayout';
 import TechSection from '@/components/technologies/techsection/TechSection';
 import { ReactElement } from 'react';
 import { NextPageWithLayout } from './_app';
@@ -62,7 +63,11 @@ const Technologies: NextPageWithLayout = () => {
 };
 
 Technologies.getLayout = function getLayout(page: ReactElement) {
-  return <PrimaryLayout>{page}</PrimaryLayout>;
+  return (
+    <SplashLayout>
+      <PrimaryLayout>{page}</PrimaryLayout>
+    </SplashLayout>
+  );
 };
 
 export default Technologies;

@@ -6,9 +6,20 @@ const StartNavigationLink = () => {
   const [action, setAction] = useState('watch');
   const [aim, setAim] = useState('CV');
 
+  // useEffect(() => {
+  //   const aimBlinkInterval = setInterval(() => {
+  //     setAim('TV');
+  //   }, 10000);
+  //   return () => clearInterval(aimBlinkInterval);
+  // }, []);
+
   return (
     <>
-      <Link href="/home" replace={true}>
+      <Link
+        href="/home"
+        className="text-3xl text-theme-white"
+        // replace={true}
+      >
         Press {buttonKey} to {action} {aim}
       </Link>
     </>

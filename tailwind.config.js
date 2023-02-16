@@ -18,21 +18,16 @@ module.exports = {
         'theme-gray': '#333333',
         'theme-black': '#1D2228',
       },
+      boxShadow: {
+        'inner-tv': 'inset 0 0 45px 0 rgba(0, 0, 0, 1)',
+      },
       keyframes: {
-        'first-drop': {
+        'screen-lagg': {
           from: {
             top: '0px',
-            left: '0px',
-            opacity: 1,
-            width: '12px',
-            height: '12px',
           },
           to: {
-            top: '30px',
-            left: '30px',
-            opacity: 0,
-            width: '8px',
-            height: '8px',
+            top: '5px',
           },
         },
         'second-drop': {
@@ -53,7 +48,7 @@ module.exports = {
         },
       },
       animation: {
-        'cursors-tail-first-drop': 'first-drop 1s linear infinite',
+        'tv-screen-lagg': 'screen-lagg 2s linear infinite',
         'cursors-tail-second-drop': 'second-drop 2s linear infinite',
       },
     },

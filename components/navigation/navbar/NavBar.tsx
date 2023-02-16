@@ -4,12 +4,8 @@ interface INavBar extends React.ComponentPropsWithoutRef<'div'> {}
 
 const NavBar: React.FC<INavBar> = ({ ...NavBarProps }) => {
   return (
-    <div {...NavBarProps} className="w-screen">
+    <div {...NavBarProps} className="w-full">
       <div className="flex border-b-2 border-theme-gray">
-        <Link href="/" className="btn-navigation">
-          Splash page
-          <span className="btn-underline"></span>
-        </Link>
         <Link href="/home" className="btn-navigation">
           About me
           <span className="btn-underline"></span>
