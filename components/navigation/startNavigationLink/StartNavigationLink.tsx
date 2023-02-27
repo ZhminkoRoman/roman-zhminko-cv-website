@@ -17,10 +17,10 @@ const StartNavigationLink = () => {
     <>
       <Link
         href="/home"
-        className="text-3xl text-theme-white"
+        className="text-3xl text-theme-white z-20"
         // replace={true}
       >
-        Press {buttonKey} to {action} {aim}
+        PRESS START
       </Link>
     </>
   );

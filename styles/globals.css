@@ -4,7 +4,7 @@
 
 @layer base {
   * {
-    @apply cursor-none text-theme-gray font-mono font-bold;
+    @apply text-theme-gray font-mono font-bold;
   }
 }
 
@@ -26,11 +26,11 @@
   }
 
   .screenBorder {
-    @apply rounded-3xl border shadow-inner-tv border-[#000];
+    /* @apply rounded-3xl border shadow-inner-tv border-[#000]; */
   }
 
   .screen {
-    @apply flex h-full justify-center items-center p-2 bg-theme-black;
+    @apply flex h-full justify-center items-center bg-theme-black;
   }
 
   .altScreen {

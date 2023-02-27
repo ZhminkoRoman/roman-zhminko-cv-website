@@ -1,3 +1,4 @@
+import BackgroundNoise from '@/components/backgroundNoise/BackgroundNoise';
 import SplashLayout from '@/components/layouts/splash/SplashLayout';
 import StartNavigationLink from '@/components/navigation/startNavigationLink/StartNavigationLink';
 import Head from 'next/head';
@@ -12,9 +13,9 @@ const Splash: NextPageWithLayout = () => {
         <meta name="description" content="CV Website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <main className="screen screenBorder flex-col">
+      <main className="flex-col relative flex h-full justify-center items-center">
+        <BackgroundNoise />
         <StartNavigationLink />
-        {/* <BackgroundNoise /> */}
       </main>
     </>
   );

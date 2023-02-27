@@ -1,5 +1,3 @@
-import Cursor from '@/components/cursor/Cursor';
-
 export interface ISplashLayout {
   children: React.ReactNode;
 }
@@ -7,11 +5,9 @@ export interface ISplashLayout {
 const SplashLayout: React.FC<ISplashLayout> = ({ children }) => {
   return (
     <>
-      <Cursor />
+      {/* <Cursor /> */}
       <>
-        <main className="flex w-screen h-screen border-8 border-[#000] bg-[#000]">
-          {children}
-        </main>
+        <main className="flex w-screen h-screen bg-[#000]">{children}</main>
       </>
     </>
   );
