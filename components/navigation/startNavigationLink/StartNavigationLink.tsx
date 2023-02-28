@@ -17,7 +17,7 @@ const StartNavigationLink = () => {
     <>
       <Link
         href="/home"
-        className="text-3xl text-theme-white z-20"
+        className="text-8xl font-retro text-[#62d3f5] z-20"
         // replace={true}
       >
         PRESS START

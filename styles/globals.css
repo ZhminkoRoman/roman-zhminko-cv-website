@@ -4,13 +4,13 @@
 
 @layer base {
   * {
-    @apply text-theme-gray font-mono font-bold;
+    @apply text-theme-gray font-bold;
   }
 }
 
 @layer components {
   .btn-navigation {
-    @apply relative text-theme-gray ml-10 my-5 font-mono font-bold tracking-[1px];
+    @apply relative text-theme-gray ml-10 my-5 font-bold tracking-[1px];
   }
 
   /* .btn-navigation::after {

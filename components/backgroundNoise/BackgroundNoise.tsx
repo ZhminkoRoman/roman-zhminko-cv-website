@@ -22,79 +22,29 @@ const Canvas = () => {
       canvas.height = document.body.clientHeight; //document.height is obsolete
 
       if (ctx) {
-        const drawWhiteNoise = () => {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          for (let i = 0; i < 220; i++) {
-            for (let j = 0; j < 220; j++) {
-              const randomRectSize = Math.floor(Math.random() * 15);
-              ctx.beginPath();
-              ctx.fillRect(
-                Math.random() * 10000,
-                Math.random() * 10000,
-                randomRectSize,
-                randomRectSize
-              );
-              ctx.fillStyle = `rgba(255, 255, 255, 0.5)`;
-              ctx.closePath();
-            }
+        const drawNoise = (color: string, clear?: boolean) => {
+          if (clear) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
           }
-        };
-        const drawBlueNoise = () => {
-          // ctx.clearRect(0, 0, canvas.width, canvas.height);
-          for (let i = 0; i < 220; i++) {
-            for (let j = 0; j < 220; j++) {
-              const randomRectSize = Math.floor(Math.random() * 15);
+          for (let i = 0; i < 200; i++) {
+            for (let j = 0; j < 200; j++) {
               ctx.beginPath();
               ctx.fillRect(
                 Math.random() * 10000,
                 Math.random() * 10000,
-                randomRectSize,
-                randomRectSize
+                10,
+                10
               );
-              ctx.fillStyle = `rgba(150, 150, 150, 0.5)`;
-              ctx.closePath();
-            }
-          }
-        };
-        const drawBlueNoiseTwo = () => {
-          // ctx.clearRect(0, 0, canvas.width, canvas.height);
-          for (let i = 0; i < 220; i++) {
-            for (let j = 0; j < 220; j++) {
-              const randomRectSize = Math.floor(Math.random() * 15);
-              ctx.beginPath();
-              ctx.fillRect(
-                Math.random() * 10000,
-                Math.random() * 10000,
-                randomRectSize,
-                randomRectSize
-              );
-              ctx.fillStyle = `rgba(93, 160, 222, 0.5)`;
-              ctx.closePath();
-            }
-          }
-        };
-        const drawBlueNoiseThree = () => {
-          // ctx.clearRect(0, 0, canvas.width, canvas.height);
-          for (let i = 0; i < 220; i++) {
-            for (let j = 0; j < 220; j++) {
-              const randomRectSize = Math.floor(Math.random() * 15);
-              ctx.beginPath();
-              ctx.fillRect(
-                Math.random() * 10000,
-                Math.random() * 10000,
-                randomRectSize,
-                randomRectSize
-              );
-              ctx.fillStyle = `rgba(200, 200, 200, 0.8)`;
+              ctx.fillStyle = color;
               ctx.closePath();
             }
           }
         };
         const noiseInterval = setInterval(() => {
-          drawWhiteNoise();
-          drawBlueNoise();
-          drawBlueNoiseTwo();
-          drawBlueNoiseThree();
+          drawNoise(`rgba(255, 255, 255, 0.5)`, true);
+          // drawNoise(`rgba(200, 200, 200, 0.8)`);
+          drawNoise(`rgba(150, 150, 150, 0.5)`);
+          drawNoise(`rgba(50, 50, 50, 0.5)`);
         }, 50);
         return () => clearInterval(noiseInterval);
       }

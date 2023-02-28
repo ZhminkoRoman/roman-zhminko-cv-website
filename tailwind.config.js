@@ -13,6 +13,9 @@ module.exports = {
       xl: '1536px',
     },
     extend: {
+      fontFamily: {
+        retro: ['SF Alien Encounters'],
+      },
       colors: {
         'theme-white': '#f9f4f4',
         'theme-gray': '#333333',
