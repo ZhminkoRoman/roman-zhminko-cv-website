@@ -1,28 +1,31 @@
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+const BUTTON_TITLE = 'PRESS START';
 
 const StartNavigationLink = () => {
-  const [buttonKey, setButtonKey] = useState('ENTER');
-  const [action, setAction] = useState('watch');
-  const [aim, setAim] = useState('CV');
+  const [buttonTitle, setButtonTitle] = useState('');
 
-  // useEffect(() => {
-  //   const aimBlinkInterval = setInterval(() => {
-  //     setAim('TV');
-  //   }, 10000);
-  //   return () => clearInterval(aimBlinkInterval);
-  // }, []);
+  useEffect(() => {
+    const buttonBlinkInterval = setInterval(() => {
+      if (buttonTitle) {
+        setButtonTitle('');
+      } else {
+        setButtonTitle(BUTTON_TITLE);
+      }
+    }, 250);
+    return () => clearInterval(buttonBlinkInterval);
+  }, [buttonTitle]);
 
   return (
-    <>
-      <Link
-        href="/home"
-        className="text-8xl retroText"
-        // replace={true}
-      >
-        PRESS START
+    <div className="flex items-center blur-[2px] justify-center relative min-h-[200px] h-[200px] w-[1000px]">
+      <Link href="/home" className="retroText">
+        {buttonTitle}
       </Link>
-    </>
+      {buttonTitle && (
+        <div className="absolute rounded-full blur-3xl bg-blend-screen w-[900px] h-[240px] bg-[#6acfff]/[0.1]" />
+      )}
+    </div>
   );
 };
 

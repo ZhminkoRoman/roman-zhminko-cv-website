@@ -17,12 +17,28 @@
 
 @layer components {
   .retroText {
-    text-shadow: 1px 1px 40px #62d3f5;
+    text-shadow: 0 0 30px #6acfff;
     font-family: 'Edit Undo Line BRK';
     /* font-family: 'Former Airline'; */
     font-style: italic;
-    color: #62d3f5;
+    font-weight: 400;
+    font-size: 6rem; /* 96px */
+    line-height: 1;
+    color: #6acfff;
+    letter-spacing: 2px;
     /* z-index: 20; */
+  }
+
+  .retroSubText {
+    text-shadow: 0 0 30px #6acfff;
+    font-family: 'Edit Undo Line BRK';
+    /* font-family: 'Former Airline'; */
+    font-style: italic;
+    font-weight: 400;
+    font-size: 3rem;
+    line-height: 1;
+    letter-spacing: 5px;
+    color: #6acfff;
   }
 
   .btn-navigation {
