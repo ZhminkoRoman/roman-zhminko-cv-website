@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'SF Alien Encounters';
+  src: url('../asset/SF Alien Encounters/SF Alien Encounters Italic V1.ttf');
+  font-weight: 400;
+  font-style: italic;
+}
+
 @layer base {
   * {
     @apply text-theme-gray font-bold;
@@ -9,6 +16,15 @@
 }
 
 @layer components {
+  .retroText {
+    text-shadow: 1px 1px 40px #62d3f5;
+    font-family: 'Edit Undo Line BRK';
+    /* font-family: 'Former Airline'; */
+    font-style: italic;
+    color: #62d3f5;
+    /* z-index: 20; */
+  }
+
   .btn-navigation {
     @apply relative text-theme-gray ml-10 my-5 font-bold tracking-[1px];
   }
