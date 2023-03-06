@@ -1,11 +1,16 @@
 import { useEffect, useRef } from 'react';
 
-// interface ICanvasProps {
-//   width: number;
-//   height: number;
-// }
-
 // Props width and height should be sent and use
+
+interface ICell {
+  x: number;
+  y: number;
+  color: string;
+}
+
+const randomIntFromInterval = (min: number, max: number) => {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
 
 const Canvas = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -15,6 +20,8 @@ const Canvas = () => {
       const canvas = canvasRef.current;
       const ctx = canvas.getContext('2d');
 
+      const imageCellArray: ICell[] = [];
+
       // canvas.width = window.innerWidth;
       // canvas.height = window.innerHeight;
 
@@ -22,27 +29,47 @@ const Canvas = () => {
       canvas.height = document.body.clientHeight; //document.height is obsolete
 
       if (ctx) {
-        const drawNoise = (color: string, clear?: boolean) => {
-          if (clear) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-          }
-          for (let i = 0; i < 200; i++) {
-            for (let j = 0; j < 200; j++) {
-              ctx.beginPath();
-              ctx.fillRect(Math.random() * 10000, Math.random() * 10000, 7, 7);
-              ctx.fillStyle = color;
-              ctx.closePath();
+        // ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        ctx.beginPath();
+        ctx.fillStyle = '#000';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.closePath();
+        const pixels = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const scanImage = (cellSize: number) => {
+          for (let y = 0; y < pixels.height; y += cellSize) {
+            for (let x = 0; x < pixels.width; x += cellSize) {
+              const posX = x * 4;
+              const posY = y * 4;
+              const pos = posY * pixels.width + posX;
+
+              if (pixels.data[pos + 3] > 128) {
+                const red = pixels.data[pos];
+                const green = pixels.data[pos + 1];
+                const blue = pixels.data[pos + 2];
+                const color = `rgb(${red}, ${green}, ${blue})`;
+                imageCellArray.push({ x, y, color });
+              }
             }
           }
         };
+        scanImage(10);
         const noiseInterval = setInterval(() => {
-          // drawNoise(`rgba(255, 255, 255, 0.2)`, true);
-          // drawNoise(`rgba(200, 200, 200, 0.2)`);
-          // drawNoise(`rgb(24%, 31%, 80%, 0.2)`);
-          // drawNoise(`rgba(160, 209, 254, 0.2)`);
-          // drawNoise(`rgb(42%, 81%, 100%, 0.3)`);
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          for (let i = 0; i < imageCellArray.length; i++) {
+            const value = randomIntFromInterval(1, 20);
+            if (value === 1) {
+              ctx.save();
+              ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+              ctx.fillRect(imageCellArray[i].x, imageCellArray[i].y, 10, 10);
+              ctx.restore();
+            }
+          }
         }, 50);
-        return () => clearInterval(noiseInterval);
+        return () => {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          clearInterval(noiseInterval);
+        };
       }
     }
   }, []);
