@@ -27,8 +27,6 @@ const BackgroundStripes = () => {
       canvas.height = document.body.clientHeight; //document.height is obsolete
 
       if (ctx) {
-        // ctx.clearRect(0, 0, canvas.width, canvas.height);
-
         ctx.beginPath();
         ctx.fillStyle = '#000';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -41,35 +39,20 @@ const BackgroundStripes = () => {
         };
         scanImage(10);
         for (let i = 0; i < imageCellArray.length; i++) {
-          // ctx.save();
           ctx.beginPath();
           ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
           ctx.moveTo(0, imageCellArray[i].y);
           ctx.lineTo(canvas.width, imageCellArray[i].y);
           ctx.stroke();
-          // ctx.restore();
         }
-        // const noiseInterval = setInterval(() => {
-        //   ctx.clearRect(0, 0, canvas.width, canvas.height);
-        //   for (let i = 0; i < imageCellArray.length; i++) {
-        //     const value = randomIntFromInterval(1, 20);
-        //     if (value === 1) {
-        //       ctx.save();
-        //       ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
-        //       ctx.fillRect(imageCellArray[i].x, imageCellArray[i].y, 10, 10);
-        //       ctx.restore();
-        //     }
-        //   }
-        // }, 50);
-        // return () => {
-        //   ctx.clearRect(0, 0, canvas.width, canvas.height);
-        //   clearInterval(noiseInterval);
-        // };
+        return () => {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        };
       }
     }
   }, []);
 
-  return <canvas ref={canvasRef} className="absolute" />;
+  return <canvas ref={canvasRef} className="blur-[1px] absolute" />;
 };
 
 export default BackgroundStripes;

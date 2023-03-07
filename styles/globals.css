@@ -11,7 +11,13 @@
 
 @layer base {
   * {
-    @apply text-theme-gray font-bold;
+    /* @apply; */
+    text-shadow: 0 0 30px #6acfff;
+    font-family: 'Edit Undo Line BRK';
+    color: #6acfff;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 5px;
   }
 }
 
@@ -41,10 +47,6 @@
     color: #6acfff;
   }
 
-  .btn-navigation {
-    @apply relative text-theme-gray ml-10 my-5 font-bold tracking-[1px];
-  }
-
   /* .btn-navigation::after {
     @apply content-[''] absolute bg-amber-400 h-[3px] w-[0%] left-0 -bottom-2 rounded-xl duration-300;
   }
@@ -57,17 +59,13 @@
     @apply w-2 shadow-[0_0_10px_red] bg-[red] z-10 absolute h-2 pointer-events-none rounded-xl;
   }
 
-  .screenBorder {
-    /* @apply rounded-3xl border shadow-inner-tv border-[#000]; */
-  }
-
-  .screen {
+  /* .screen {
     @apply flex h-full justify-center items-center bg-theme-black;
   }
 
   .altScreen {
     @apply flex h-full w-full justify-center items-center p-2 bg-theme-white animate-tv-screen-lagg;
-  }
+  } */
   /* 
   .cursor::before {
     @apply content-[''] absolute bg-theme-gray w-2 h-2 animate-cursors-tail-first-drop -right-2 -bottom-2;

@@ -1,27 +1,25 @@
-import PrimaryLayout from '@/components/layouts/primary/PrimaryLayout';
 import SplashLayout from '@/components/layouts/splash/SplashLayout';
+import Head from 'next/head';
 import { ReactElement } from 'react';
 import { NextPageWithLayout } from './_app';
 
 const Home: NextPageWithLayout = () => {
   return (
     <>
-      <main>
-        <div className="px-10 mt-10">
-          <p>Hello there!</p>
-          <h3>Shortly Home myself:</h3>
-        </div>
+      <Head>
+        <title>Roman Zhminko CV</title>
+        <meta name="description" content="CV Website" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+      <main className="flex-col relative flex h-full justify-center items-center z-10">
+        <p>Hello Anastasiya!</p>
       </main>
     </>
   );
 };
 
 Home.getLayout = function getLayout(page: ReactElement) {
-  return (
-    <SplashLayout>
-      <PrimaryLayout>{page}</PrimaryLayout>
-    </SplashLayout>
-  );
+  return <SplashLayout>{page}</SplashLayout>;
 };
 
 export default Home;
