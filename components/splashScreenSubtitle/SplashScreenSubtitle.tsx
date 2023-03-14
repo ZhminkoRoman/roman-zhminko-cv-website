@@ -13,7 +13,7 @@ const SplashScreenSubtitle = () => {
   // }, [buttonTitle]);
 
   return (
-    <div className="flex items-center blur-[2px] justify-center relative min-h-[80px] h-[80px] w-[1000px]">
+    <div className="flex items-center blur-[1px] justify-center relative min-h-[80px] h-[80px] w-[1000px]">
       <div className="absolute rounded-full blur-3xl bg-blend-screen w-[1000px] h-[200px] bg-[#6acfff]/[0.1]" />
       <p className="retroSubText">Insert a coin to continue</p>
     </div>

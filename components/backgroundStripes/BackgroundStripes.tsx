@@ -52,7 +52,7 @@ const BackgroundStripes = () => {
     }
   }, []);
 
-  return <canvas ref={canvasRef} className="blur-[1px] absolute" />;
+  return <canvas ref={canvasRef} className="blur-[0.5px] absolute" />;
 };
 
 export default BackgroundStripes;

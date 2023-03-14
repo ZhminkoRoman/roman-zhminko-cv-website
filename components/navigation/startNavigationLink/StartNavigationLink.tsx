@@ -42,7 +42,7 @@ const StartNavigationLink = () => {
   });
 
   return (
-    <div className="flex items-center blur-[2px] justify-center relative min-h-[200px] h-[200px] w-[1000px]">
+    <div className="flex items-center blur-[1px] justify-center relative min-h-[200px] h-[200px] w-[1000px]">
       <Link href="/home" className="retroText">
         {buttonTitle}
       </Link>
